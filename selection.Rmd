@@ -7,18 +7,27 @@ editor_options:
     wrap: sentence
 ---
 
-A wide variety of models are available when constructing SDMs for the purpose of projecting marine species distribution into future ocean climates [e.g., @elith2009b; @norberg2019\]. SDM models range from parametric, to semiparametric \[e.g., @shelton2014\], to various forms of non-parametric approaches including MaxEnt \[@phillips2006\] and machine- or deep-learning models \[e.g., @elith2008; @christin2019\]. Furthermore, SDMs can be purely phenomenological \[correlative, @jarnevich2015\] or built on assumed mechanisms and calibrated to data \[@kearney2009\]. Correlative models may perform well on existing data but not extrapolate well if those correlations break down \[e.g., @davis1998].
+A wide variety of models are available when constructing SDMs for the purpose of projecting marine species distribution into future ocean climates [e.g., @elith2009b; @norberg2019]. 
+SDM models range from parametric, to semiparametric [e.g., @shelton2014], to various forms of non-parametric approaches including MaxEnt [@phillips2006] and machine- or deep-learning models [e.g., @elith2008; @christin2019]. 
+Furthermore, SDMs can be purely phenomenological [correlative, @jarnevich2015] or built on assumed mechanisms and calibrated to data [@kearney2009]. 
+Correlative models may perform well on existing data but not extrapolate well if those correlations break down [e.g., @davis1998].
 Mechanistic models are grounded in physiological and biological principles, and may outperform correlative models in novel conditions, but are often challenging to construct [@kearney2009].
 Hybrid models---incorporating known mechanisms in addition to phenomenological correlations---have the potential to borrow advantages from both kinds of models [@kearney2009].
 
 How does one go about selecting an SDM model for the purpose of projecting marine species distributions into future ocean climates?
 First, it is critical to start with a set of candidate models that can support the objectives of the analysis (Section XX).
-Second, one needs to evaluate candidate models for any problems in the fit itself [e.g. poor mixing of chains, divergent iterations, failure to converge\] as well as violations of their assumptions \[e.g., residual analysis, @rufener2021; posterior predictive checks, @gelman1996a].
+Second, one needs to evaluate candidate models for any problems in the fit itself [e.g. poor mixing of chains, divergent iterations, failure to converge] as well as violations of their assumptions [e.g., residual analysis, @rufener2021; posterior predictive checks, @gelman1996a].
 Third, one can compare the ability of these models to make good predictions.
 For the topic at hand, that would primarily be the ability to predict future species distributions.
 
 A number of approaches are available to compare among candidate models meeting the above criteria.
-Information theoretic approaches (e.g., AIC @akaike1973, LOOIC [@vehtari2017\]) can help evaluate model parsimony; a more parsimonious model should in theory make better future predictions \[e.g., @aho2014\]. Similarly, variable selection can simplify complex models by seeking subsets of predictor variables that still allow good predictions \[@PiirVeht17a\]. However, these approaches are not typically designed to explicitly evaluate future predictions and are generally limited to parametric models. Beyond information theoretics, cross validation is a key model selection tool since it lets the modeller choose what aspect of model performance is most important (e.g., random prediction, spatial prediction into new areas, prediction into the future) \[@roberts2017\] and what aspect of predictive ability is assessed (e.g. false positives vs. false negatives, @sofaer2019; coverage or narrowness of confidence intervals, @rufener2021). However, it is important to consider that the breadth of available data on which to evaluate future prediction is unlikely to encompass the degree of expected change under climate change. If the purpose is purely prediction, it is not always necessary to choose a single model; predictions from multiple models can be combined in an average or ensemble. Ensembles of models can improve predictive ability \[@araujo2007; but see @hao2020] and can be as simple as unweighted or weighted averages [@araujo2007] or as complex as 'superensembles' tuned to simulated or trusted data [@anderson2017d].
+Information theoretic approaches (e.g., AIC @akaike1973, LOOIC [@vehtari2017]) can help evaluate model parsimony; a more parsimonious model should in theory make better future predictions [e.g., @aho2014]. 
+Similarly, variable selection can simplify complex models by seeking subsets of predictor variables that still allow good predictions [@PiirVeht17a]. 
+However, these approaches are not typically designed to explicitly evaluate future predictions and are generally limited to parametric models. 
+Beyond information theoretics, cross validation is a key model selection tool since it lets the modeller choose what aspect of model performance is most important (e.g., random prediction, spatial prediction into new areas, prediction into the future) [@roberts2017] and what aspect of predictive ability is assessed (e.g. false positives vs. false negatives, @sofaer2019; coverage or narrowness of confidence intervals, @rufener2021). 
+However, it is important to consider that the breadth of available data on which to evaluate future prediction is unlikely to encompass the degree of expected change under climate change. 
+If the purpose is purely prediction, it is not always necessary to choose a single model; predictions from multiple models can be combined in an average or ensemble. 
+Ensembles of models can improve predictive ability [@araujo2007; but see @hao2020] and can be as simple as unweighted or weighted averages [@araujo2007] or as complex as 'superensembles' tuned to simulated or trusted data [@anderson2017d].
 An ensemble is only as good as its component parts, however, so some degree of diligence must be taken to choose a high-quality candidate set.
 
 # References
